@@ -1,7 +1,7 @@
 language: python
 node_js: '9.4'
 python:
-- '3.6'
+- '3.8'
 install:
 - pip install tox-travis
 - pip install python-coveralls
