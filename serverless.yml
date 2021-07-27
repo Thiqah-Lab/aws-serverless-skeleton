@@ -37,7 +37,7 @@ configValidationMode: warn
 
 provider:
   name: aws
-  runtime: python3.8
+  runtime: python3.7
   region: eu-west-1
   stage: ${opt:stage, 'local'}
   environment: ${file(config/${self:provider.stage}-env.yml):environment}
