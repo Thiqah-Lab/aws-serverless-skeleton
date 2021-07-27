@@ -23,6 +23,9 @@ custom:
       InstanceType: m4.large.elasticsearch
       InstanceCount: 1
   dynamodb:
+    stages:
+      - dev
+      - local
     start:
       migrate: true
       seed: true

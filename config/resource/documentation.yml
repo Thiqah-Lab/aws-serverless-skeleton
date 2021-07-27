@@ -19,15 +19,3 @@ documentation:
       -
         name: SKELETON_Auth
         description: 'Auth functions'
-  models:
-    -
-      name: SkeletonPost
-      contentType: application/json
-      schema:
-        type: object
-        properties:
-          title:
-            type: string
-          post:
-            type: string
-   

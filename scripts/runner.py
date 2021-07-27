@@ -94,11 +94,11 @@ def seed_elastic_search(seed_file_path, index_name):
 
 
 def start_dynamodb_with_seed():
-    return _start_dynamodb(['--stage local', '--migrate', '--seed'])
+    return _start_dynamodb(['--migrate', '--seed'])
 
 
 def start_dynamodb_without_seed():
-    return _start_dynamodb(['--stage local', '--migrate'])
+    return _start_dynamodb(['--migrate'])
 
 
 def start_start_elasticsearch_with_seed():
@@ -236,7 +236,7 @@ if __name__ == '__main__':
 
     elif results.start_all_services:
         start_dynamodb_with_seed()
-        start_start_elasticsearch_with_seed()
+        # start_start_elasticsearch_with_seed()
         if results.verbose:
             _read_proc_stdout(start_sls_offline())
         else:
