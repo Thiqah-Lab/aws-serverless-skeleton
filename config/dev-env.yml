@@ -1,6 +1,7 @@
 environment:
   DYNAMODB_POST_TABLE: "${self:service}-${self:provider.stage}-post"
   DYNAMODB_USER_TABLE: "${self:service}-${self:provider.stage}-user"
+  DYNAMODB_DESTINATION_TABLE: "${self:service}-${self:provider.stage}-destination"
   REGION: ${self:provider.region}
   STAGE: ${self:provider.stage}
 #  ES_ENDPOINT:
@@ -11,6 +12,8 @@ environment:
   VPC_SUBNET_PUBLIC_1: "VPC_SUBNET_PUBLIC_1"
   VPC_SUBNET_PUBLIC_2: "VPC_SUBNET_PUBLIC_2"
   CLOUDWATCH_NAMESPACE: "skeleton/${self:provider.stage}"
+  COGNITO_POOL_ID: "eu-west-1_54KL2hCxM"
+  COGNITO_ARN: "arn:aws:cognito-idp:eu-west-1:995277725002:userpool/eu-west-1_54KL2hCxM"
 
 custom:
   documentation: ${file(config/resource/documentation.yml):documentation}
@@ -28,6 +31,11 @@ custom:
       WriteCapacityUnits: 1
       BillingMode: PROVISIONED
       PointInTimeRecoveryEnabled: false
+    DYNAMODB_DESTINATION_TABLE:
+      ReadCapacityUnits: 1
+      WriteCapacityUnits: 1
+      BillingMode: PROVISIONED
+      PointInTimeRecoveryEnabled: false
   es:
     ElasticsearchClusterConfig:
       InstanceType: t2.small.elasticsearch
@@ -38,7 +46,10 @@ custom:
 
 functions: ${file(config/resource/functions.yml):functions}
 
+#authorizer:
+#  type: COGNITO_USER_POOLS
+#  authorizerId:
+#    Ref: ApiGatewayAuthorizer
+
 authorizer:
-  type: COGNITO_USER_POOLS
-  authorizerId:
-    Ref: ApiGatewayAuthorizer
+  arn: "arn:aws:cognito-idp:eu-west-1:995277725002:userpool/eu-west-1_54KL2hCxM"

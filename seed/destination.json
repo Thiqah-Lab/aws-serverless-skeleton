@@ -1,0 +1,50 @@
+[
+  {
+    "id": "5943082c-f136-11e7-8919-0a6d48ff11dd",
+    "updatedAt": "2021-08-01T11:12:40.620046+0000",
+    "user_sub": "9929942b-a90b-443d-96bf-19393615f6d7",
+    "createdAt": "2021-08-01T11:12:40.620046+0000",
+    "status": "PUBLISHED",
+    "title": "Post Title",
+    "images": [
+      {
+        "file_name": "image1.jpg",
+        "file_path": "s3/fake_path/image1.jpg",
+        "createdAt": "2021-08-01T11:12:40.620046+0000",
+        "updatedAt": "2021-08-01T11:12:40.620046+0000"
+      },
+      {
+        "file_name": "image2.jpg",
+        "file_path": "s3/fake_path/image2.jpg",
+        "createdAt": "2021-08-01T11:12:40.620046+0000",
+        "updatedAt": "2021-08-01T11:12:40.620046+0000"
+      }
+    ],
+    "tags": [
+      "Food",
+      "Heritage",
+      "Live_music"
+    ],
+    "category": "Store",
+    "opening_times": [
+      [0, "8:00", "20:00"],
+      [1, "8:00", "20:00"],
+      [2, "8:00", "20:00"],
+      [3, "8:00", "20:00"],
+      [4, "8:00", "20:00"],
+      [5, "8:00", "20:00"],
+      [6, "8:00", "20:00"]
+    ],
+    "general_description": "General description about this destination max 250 chars",
+    "types_of_activities": "Types of activities can be done if any max 120 chars",
+    "estimated_price": "$$$",
+    "website": "thiqah.sa",
+    "email": "thiqah@thiqah.sa",
+    "phone": "0000000000",
+    "location": {
+      "lat": 24.80,
+      "lng": 46.64
+    }
+  }
+
+]

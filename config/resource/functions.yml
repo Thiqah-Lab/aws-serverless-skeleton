@@ -1,6 +1,6 @@
 functions:
   post_get: ${file(lambda_functions/post/functions.yml):post_get}
-  post_create: ${file(lambda_functions/post/functions.yml):post_create}
+  #post_create: ${file(lambda_functions/post/functions.yml):post_create}
   post_list: ${file(lambda_functions/post/functions.yml):post_list}
   # post_delete: ${file(lambda_functions/post/functions.yml):post_delete}
   # post_update: ${file(lambda_functions/post/functions.yml):post_update}

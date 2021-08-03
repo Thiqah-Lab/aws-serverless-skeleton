@@ -1,0 +1,3 @@
+create:
+  title: string
+  post: string

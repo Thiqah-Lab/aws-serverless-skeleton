@@ -18,7 +18,7 @@ post_create:
         path: post
         method: post
         cors: true
-        authorizer: ${file(config/${self:provider.stage}-env.yml):authorizer}
+#        authorizer: ${file(config/${self:provider.stage}-env.yml):authorizer}
         request:
           schemas:
             application/json:
@@ -33,7 +33,7 @@ post_list:
         path: post
         method: get
         cors: true
-        authorizer: ${file(config/${self:provider.stage}-env.yml):authorizer}
+#        authorizer: ${file(config/${self:provider.stage}-env.yml):authorizer}
         documentation:
           description: Get all posts.
           tags:
@@ -46,7 +46,7 @@ post_delete:
         path: post/{id}
         method: delete
         cors: true
-        authorizer: ${file(config/${self:provider.stage}-env.yml):authorizer}
+#        authorizer: ${file(config/${self:provider.stage}-env.yml):authorizer}
         documentation:
           description: Delete post by id (for admin only).
           tags:
@@ -59,7 +59,7 @@ post_update:
         path: post/{id}
         method: put
         cors: true
-        authorizer: ${file(config/${self:provider.stage}-env.yml):authorizer}
+#        authorizer: ${file(config/${self:provider.stage}-env.yml):authorizer}
         documentation:
           description: Update post by id (for admin only).
           tags:

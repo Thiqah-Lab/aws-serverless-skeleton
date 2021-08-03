@@ -1,0 +1,12 @@
+destination_get:
+  handler: lambda_functions/destination/destination.get
+  events:
+    - http:
+        path: destination/{id}
+        method: get
+        cors: true
+        authorizer: ${file(config/${self:provider.stage}-env.yml):authorizer}
+        documentation:
+          description: Get destination request by id
+          tags:
+            - Destination

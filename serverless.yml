@@ -45,7 +45,6 @@ provider:
   lambdaHashingVersion: 20201221
 
 resources:
-  - ${file(config/resource/cognito.yml)}
   - ${file(config/resource/dynamodb.yml)}
   - ${file(config/resource/rules.yml)}
   - ${file(config/resource/s3.yml)}

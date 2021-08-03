@@ -1,6 +1,7 @@
 environment:
   DYNAMODB_POST_TABLE: "${self:service}-${self:provider.stage}-post"
   DYNAMODB_USER_TABLE: "${self:service}-${self:provider.stage}-user"
+  DYNAMODB_DESTINATION_TABLE: "${self:service}-${self:provider.stage}-destination"
   POOL_ARN: "POOL_ARN"
   REGION: ${self:provider.region}
   STAGE: ${self:provider.stage}
@@ -25,6 +26,11 @@ custom:
       BillingMode: PAY_PER_REQUEST
       PointInTimeRecoveryEnabled: true
     DYNAMODB_USER_TABLE:
+      ReadCapacityUnits: 0
+      WriteCapacityUnits: 0
+      BillingMode: PAY_PER_REQUEST
+      PointInTimeRecoveryEnabled: true
+    DYNAMODB_DESTINATION_TABLE:
       ReadCapacityUnits: 0
       WriteCapacityUnits: 0
       BillingMode: PAY_PER_REQUEST

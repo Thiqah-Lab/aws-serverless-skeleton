@@ -1,6 +1,7 @@
 environment:
   DYNAMODB_POST_TABLE: "${self:service}-${self:provider.stage}-post"
   DYNAMODB_USER_TABLE: "${self:service}-${self:provider.stage}-user"
+  DYNAMODB_DESTINATION_TABLE: "${self:service}-${self:provider.stage}-destination"
   DYNAMODB_HOST: "http://localhost:8000"
   REGION: ${self:provider.region}
   STAGE: ${self:provider.stage}
@@ -36,12 +37,19 @@ custom:
             sources: [./seed/post.json]
           - table: ${self:provider.environment.DYNAMODB_USER_TABLE}
             sources: [./seed/user.json]
+          - table: ${self:provider.environment.DYNAMODB_DESTINATION_TABLE}
+            sources: [ ./seed/destination.json ]
     DYNAMODB_POST_TABLE:
       ReadCapacityUnits: 1
       WriteCapacityUnits: 1
       BillingMode: PAY_PER_REQUEST
       PointInTimeRecoveryEnabled: false
     DYNAMODB_USER_TABLE:
+      ReadCapacityUnits: 1
+      WriteCapacityUnits: 1
+      BillingMode: PAY_PER_REQUEST
+      PointInTimeRecoveryEnabled: false
+    DYNAMODB_DESTINATION_TABLE:
       ReadCapacityUnits: 1
       WriteCapacityUnits: 1
       BillingMode: PAY_PER_REQUEST
