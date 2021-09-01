@@ -19,13 +19,12 @@ post_create:
         method: post
         cors: true
         authorizer: ${file(config/${self:provider.stage}-env.yml):authorizer}
-        reqValidatorName: onlyBody
-        documentation:
-          tags:
-            - SKELETON_Post
-          description: POST method for create new post.
-          requestModels:
-            "application/json": SkeletonPost
+        request:
+          schemas:
+            application/json:
+              schema: ${file(validator/create_request.json)}
+              name: PostCreateModel
+              description: 'Validation model for Creating Posts'
 
 post_list:
   handler: lambda_functions/post/post.list

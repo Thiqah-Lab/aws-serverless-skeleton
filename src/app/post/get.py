@@ -26,7 +26,7 @@ class GetService(object):
             return HTTPStatus.NOT_FOUND
 
     def _get_post_object(self, query_filter=None):
-        for item in PostModel.query(self.path_param, query_filter):
+        for item in PostModel.query(self.path_param, filter_condition=query_filter):
             return item
         raise ItemNotFoundException
 

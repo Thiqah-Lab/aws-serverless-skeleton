@@ -1,7 +1,7 @@
 language: python
 node_js: '9.4'
 python:
-- '3.6'
+- '3.7'
 install:
 - pip install tox-travis
 - pip install python-coveralls
@@ -10,7 +10,7 @@ script:
 - tox
 sudo: false
 before_script:
-- npm install -g serverless@1.35.1
+- npm install -g serverless@2.52.1
 - npm install
 - npm run dynamo-install
 - npm run elasticsearch-install
